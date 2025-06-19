@@ -54,7 +54,7 @@ plot_supplier <- subset(df, !is.na(glass_supplier)) %>%
   geom_jitter(aes(color = glass_supplier), show.legend = FALSE, alpha = 0.5, size = 2) +
   stat_summary(fun = mean, geom = "crossbar", color = "black", size = 0.5) +
   geom_label(data = supplier_mean,
-             aes(x = glass_supplier, y = annotate, label = paste("Mean:",mean)),
+             aes(x = glass_supplier, y = annotate, fill = glass_supplier, size = 12, label = paste("Mean:",mean)),
              show.legend = FALSE) +
   labs(x = "Glass Supplier", y = "Breakage Rate") +
   theme_classic() +
